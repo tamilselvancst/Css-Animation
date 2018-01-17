@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Circle load scale animation</title>
+
+        <style media="screen">
+            /* Common css start here */
+            *, *::before, *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+            body {
+                background: #fff;
+            }
+            .container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -40px;
+                margin-top: -40px;
+            }
+            /* Common css end here */
+
+            /* Animation css start here */
+            .circles { width:80px; height:80px; background:#f07431; border-radius:100%; transition:0.5s; position:relative;
+            }
+            .circles.fadeout { opacity:0; transform:scale(4.5);
+            }
+            .circles + span { width:80px; height:80px; border-radius:100%; position:absolute; top:0; left:0; right:0; bottom:0; color:#fff; display:block; text-align:center; padding-top:21px; font-family:lato; font-size:13px;
+            }
+            .circles + span strong { display: block;
+            }
+            /* Animation css end here */
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <!-- markup start -->
+            <div class="circles"></div>
+            <span><strong>6.0%</strong> Cash Back </span>
+            <!-- markup end -->
+        </div>
+
+        <!-- Script section start here -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            setTimeout(function(){
+                $('.circles').addClass('fadeout');
+            }, 1000);
+        });
+        </script>
+        <!-- Script section end here -->
+    </body>
+</html>
